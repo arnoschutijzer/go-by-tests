@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package hello
 
 const englishHelloPrefix = "Hello, "
 const Spanish = "Spanish"
@@ -31,8 +29,4 @@ func greetingPrefix(language string) (prefix string) {
 	}
 
 	return prefix
-}
-
-func main() {
-	fmt.Println(Hello("world", ""))
 }
