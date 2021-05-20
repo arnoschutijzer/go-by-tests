@@ -1,20 +1,36 @@
 package iteration
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestRepeat(t *testing.T) {
 	t.Run("repeat A 5 times", func(t *testing.T) {
-		got := Repeat("A")
+		got := Repeat("A", 5)
 		want := "AAAAA"
 
-		if got != want {
-			t.Errorf("got %q but wanted %q", got, want)
-		}
+		assert.Equal(t, got, want)
 	})
+
+	t.Run("repeat A 6 times", func(t *testing.T) {
+		got := Repeat("A", 6)
+		want := "AAAAAA"
+
+		assert.Equal(t, got, want)
+	})
+}
+
+func ExampleRepeat() {
+	theLetterAFiveTimes := Repeat("A", 5)
+	fmt.Println(theLetterAFiveTimes)
+	// Output: AAAAA
 }
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("a")
+		Repeat("a", 5)
 	}
 }
