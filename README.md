@@ -11,3 +11,6 @@ func ExampleAdd() {
 
 ## check out documentation
 `godoc -http 8000` and find your package
+
+## run benchmark tests
+`go test -bench=.`
