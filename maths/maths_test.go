@@ -83,4 +83,21 @@ func TestSumAllTails(t *testing.T) {
 
 		assert.Equal(t, want, got)
 	})
+
+	t.Run("doesnt manipulate my original slices", func(t *testing.T) {
+		firstSlice := []int{1, 2, 3, 4}
+		secondSlice := []int{5, 6, 7, 8}
+
+		got := SumAllTails(firstSlice, secondSlice)
+		want := []int{9, 21}
+
+		assert.Equal(t, want, got)
+		assert.Equal(t, 4, len(firstSlice))
+	})
+}
+
+func BenchmarkSumAll(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SumAllTails([]int{12, 3, 12341234, 3213}, []int{123123, 12312312, 3123213})
+	}
 }
