@@ -61,3 +61,26 @@ func TestSumAll(t *testing.T) {
 		assert.Equal(t, want, got)
 	})
 }
+
+func TestSumAllTails(t *testing.T) {
+	t.Run("total some slices", func(t *testing.T) {
+		got := SumAllTails(
+			[]int{
+				1, 2, 3,
+			},
+			[]int{
+				4, 5, 6,
+			},
+		)
+		want := []int{5, 11}
+
+		assert.Equal(t, want, got)
+	})
+
+	t.Run("nil-safe slice summing", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{2, 9})
+		want := []int{0, 9}
+
+		assert.Equal(t, want, got)
+	})
+}
