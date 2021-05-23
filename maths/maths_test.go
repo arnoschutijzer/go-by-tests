@@ -1,6 +1,7 @@
 package maths
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -100,4 +101,10 @@ func BenchmarkSumAll(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SumAllTails([]int{12, 3, 12341234, 3213}, []int{123123, 12312312, 3123213})
 	}
+}
+
+func ExampleSumAll() {
+	sum := SumAll([]int{1, 2, 3, 4}, []int{3, 2, 2, 2})
+	fmt.Println(sum)
+	// Output: [10 9]
 }
