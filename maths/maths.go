@@ -18,10 +18,9 @@ func SumSlice(elements []int) int {
 
 // A variadic function!
 func SumAll(slices ...[]int) (sums []int) {
-	totals := make([]int, len(slices))
-
-	for index, slice := range slices {
-		totals[index] = SumSlice(slice)
+	var totals []int
+	for _, slice := range slices {
+		totals = append(totals, SumSlice(slice))
 	}
 
 	return totals
