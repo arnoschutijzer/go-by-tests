@@ -16,6 +16,7 @@ func SumSlice(elements []int) int {
 	return sum
 }
 
+// A variadic function!
 func SumAll(slices ...[]int) (sums []int) {
 	totals := make([]int, len(slices))
 
