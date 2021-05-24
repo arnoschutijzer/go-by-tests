@@ -36,7 +36,7 @@ func TestArea(t *testing.T) {
 			Height: 10.0,
 			Width:  10.0,
 		}
-		got := Area(rectangle)
+		got := rectangle.Area()
 		want := 100.0
 
 		assert.Equal(t, want, got)
@@ -47,8 +47,16 @@ func TestArea(t *testing.T) {
 			Height: 10.0,
 			Width:  6.0,
 		}
-		got := Area(rectangle)
+		got := rectangle.Area()
 		want := 60.0
+
+		assert.Equal(t, want, got)
+	})
+
+	t.Run("Calculates area of a circle", func(t *testing.T) {
+		circle := Circle{10}
+		got := circle.Area()
+		want := 314.1592653589793
 
 		assert.Equal(t, want, got)
 	})
