@@ -32,6 +32,7 @@ func TestPerimeter(t *testing.T) {
 
 func TestArea(t *testing.T) {
 
+	// see https://github.com/golang/go/wiki/TableDrivenTests
 	areaTests := []struct {
 		shape Shape
 		want  float64
