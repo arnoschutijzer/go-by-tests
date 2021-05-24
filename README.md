@@ -1,5 +1,10 @@
 # go-by-tests
 
+## run tests
+```bash
+$ go test ./... -cover -v
+```
+
 ## create an example test
 ```go
 func ExampleAdd() {
