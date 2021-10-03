@@ -19,3 +19,6 @@ func ExampleAdd() {
 
 ## run benchmark tests
 `go test -bench=.`
+
+## and also
+https://golang.org/doc/effective_go
